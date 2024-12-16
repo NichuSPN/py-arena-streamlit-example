@@ -68,7 +68,3 @@ To run this project locally, follow these steps:
 ## Data Source
 
 This application uses data from the [COVID Tracking Project](https://covidtracking.com/data/api).
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
