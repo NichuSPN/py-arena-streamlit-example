@@ -1,0 +1,28 @@
+CREATE TABLE corona_history_values (
+	date TEXT, 
+	states INT, 
+	positive BIGINT, 
+	negative BIGINT,
+	pending BIGINT,
+	hospitalizedCurrently BIGINT,
+	hospitalizedCumulative BIGINT,
+	inIcuCurrently BIGINT,
+	inIcuCumulative	BIGINT,
+	onVentilatorCurrently BIGINT,
+	onVentilatorCumulative BIGINT,
+	dateChecked TEXT,
+	death BIGINT,
+	hospitalized BIGINT,
+	totalTestResults BIGINT,
+	lastModified TEXT,
+	recovered BIGINT,
+	total BIGINT,
+	posNeg BIGINT,
+	deathIncrease BIGINT,
+	hospitalizedIncrease BIGINT,
+	negativeIncrease BIGINT,
+	positiveIncrease BIGINT, 
+	totalTestResultsIncrease BIGINT,
+	hash TEXT);
+
+\COPY corona_history_values (date, states, positive, negative, pending, hospitalizedCurrently, hospitalizedCumulative, inIcuCurrently, inIcuCumulative, onVentilatorCurrently, onVentilatorCumulative, dateChecked, death, hospitalized, totalTestResults, lastModified, recovered, total, posNeg, deathIncrease, hospitalizedIncrease, negativeIncrease, positiveIncrease, totalTestResultsIncrease, hash) FROM PROGRAM 'curl "https://api.covidtracking.com/v1/us/daily.csv"' WITH DELIMITER ',' CSV HEADER;
